@@ -1,0 +1,97 @@
+2025-03-08 08:59:25 - Connecting to PostgreSQL...
+2025-03-08 08:59:26 - ✅ Connection Successful! Movies data extracted
+2025-03-08 08:59:26 - Ratings data extracted
+2025-03-08 08:59:26 - Checkind the data
+2025-03-08 08:59:32 - +---------+---------+-------------------------------------------+-------------------------------------------------+-------+---------+-------+--------------+------------------------+
+|tconst   |titletype|primarytitle                               |originaltitle                                    |isadult|startyear|endyear|runtimeminutes|genres                  |
++---------+---------+-------------------------------------------+-------------------------------------------------+-------+---------+-------+--------------+------------------------+
+|tt0000001|short    |Carmencita                                 |Carmencita                                       |0      |1894     |NULL   |1             |Documentary,Short       |
+|tt0000002|short    |Le clown et ses chiens                     |Le clown et ses chiens                           |0      |1892     |NULL   |5             |Animation,Short         |
+|tt0000003|short    |Poor Pierrot                               |Pauvre Pierrot                                   |0      |1892     |NULL   |5             |Animation,Comedy,Romance|
+|tt0000004|short    |Un bon bock                                |Un bon bock                                      |0      |1892     |NULL   |12            |Animation,Short         |
+|tt0000005|short    |Blacksmith Scene                           |Blacksmith Scene                                 |0      |1893     |NULL   |1             |Short                   |
+|tt0000006|short    |Chinese Opium Den                          |Chinese Opium Den                                |0      |1894     |NULL   |1             |Short                   |
+|tt0000007|short    |Corbett and Courtney Before the Kinetograph|Corbett and Courtney Before the Kinetograph      |0      |1894     |NULL   |1             |Short,Sport             |
+|tt0000008|short    |Edison Kinetoscopic Record of a Sneeze     |Edison Kinetoscopic Record of a Sneeze           |0      |1894     |NULL   |1             |Documentary,Short       |
+|tt0000009|movie    |Miss Jerry                                 |Miss Jerry                                       |0      |1894     |NULL   |45            |Romance                 |
+|tt0000010|short    |Leaving the Factory                        |La sortie de l'usine Lumière à Lyon              |0      |1895     |NULL   |1             |Documentary,Short       |
+|tt0000011|short    |Akrobatisches Potpourri                    |Akrobatisches Potpourri                          |0      |1895     |NULL   |1             |Documentary,Short       |
+|tt0000012|short    |The Arrival of a Train                     |L'arrivée d'un train à La Ciotat                 |0      |1896     |NULL   |1             |Documentary,Short       |
+|tt0000013|short    |The Photographical Congress Arrives in Lyon|Le débarquement du congrès de photographie à Lyon|0      |1895     |NULL   |1             |Documentary,Short       |
+|tt0000014|short    |The Waterer Watered                        |L'arroseur arrosé                                |0      |1895     |NULL   |1             |Comedy,Short            |
+|tt0000015|short    |Around a Cabin                             |Autour d'une cabine                              |0      |1894     |NULL   |2             |Animation,Comedy,Short  |
+|tt0000016|short    |Boat Leaving the Port                      |Barque sortant du port                           |0      |1895     |NULL   |1             |Documentary,Short       |
+|tt0000017|short    |Italienischer Bauerntanz                   |Italienischer Bauerntanz                         |0      |1895     |NULL   |1             |Documentary,Short       |
+|tt0000018|short    |Das boxende Känguruh                       |Das boxende Känguruh                             |0      |1895     |NULL   |1             |Short,Sport             |
+|tt0000019|short    |The Clown Barber                           |The Clown Barber                                 |0      |1898     |NULL   |NULL          |Comedy,Short            |
+|tt0000020|short    |The Derby 1895                             |The Derby 1895                                   |0      |1895     |NULL   |1             |Documentary,Short,Sport |
++---------+---------+-------------------------------------------+-------------------------------------------------+-------+---------+-------+--------------+------------------------+
+only showing top 20 rows
+
+2025-03-08 08:59:33 - +---------+-------------+--------+
+|tconst   |averagerating|numvotes|
++---------+-------------+--------+
+|tt0000001|5.7          |2138    |
+|tt0000002|5.5          |289     |
+|tt0000003|6.4          |2171    |
+|tt0000004|5.3          |185     |
+|tt0000005|6.2          |2905    |
+|tt0000006|5.0          |208     |
+|tt0000007|5.3          |903     |
+|tt0000008|5.4          |2283    |
+|tt0000009|5.3          |222     |
+|tt0000010|6.8          |7885    |
+|tt0000011|5.2          |413     |
+|tt0000012|7.4          |13385   |
+|tt0000013|5.7          |2051    |
+|tt0000014|7.1          |6112    |
+|tt0000015|6.1          |1263    |
+|tt0000016|5.9          |1647    |
+|tt0000017|4.6          |376     |
+|tt0000018|5.2          |657     |
+|tt0000019|5.2          |33      |
+|tt0000020|4.7          |408     |
++---------+-------------+--------+
+only showing top 20 rows
+
+2025-03-08 08:59:33 - Applying Transformation...
+2025-03-08 08:59:33 - 1. Handling Null Values
+2025-03-08 08:59:33 - 2. Applying Data Conversion
+2025-03-08 08:59:33 - 
+ Movies Schema:
+2025-03-08 08:59:33 - root
+ |-- titletype: string (nullable = true)
+ |-- tconst: string (nullable = true)
+ |-- primarytitle: string (nullable = true)
+ |-- originaltitle: string (nullable = true)
+ |-- isadult: integer (nullable = true)
+ |-- startyear: integer (nullable = false)
+ |-- endyear: integer (nullable = false)
+ |-- runtimeminutes: integer (nullable = true)
+ |-- genres: string (nullable = true)
+
+2025-03-08 08:59:33 - 
+ Ratings Schema:
+2025-03-08 08:59:33 - root
+ |-- tconst: string (nullable = true)
+ |-- averagerating: float (nullable = true)
+ |-- numvotes: integer (nullable = true)
+
+2025-03-08 08:59:33 - 🔍 Checking NULL values in Movies dataset:
+2025-03-08 08:59:42 - +---------+------+------------+-------------+-------+---------+-------+--------------+------+
+|titletype|tconst|primarytitle|originaltitle|isadult|startyear|endyear|runtimeminutes|genres|
++---------+------+------------+-------------+-------+---------+-------+--------------+------+
+|        0|     0|           0|            0|      0|        0|      0|             0|     0|
++---------+------+------------+-------------+-------+---------+-------+--------------+------+
+
+2025-03-08 08:59:42 - 🔍 Checking NULL values in Ratings dataset:
+2025-03-08 08:59:43 - +------+-------------+--------+
+|tconst|averagerating|numvotes|
++------+-------------+--------+
+|     0|            0|       0|
++------+-------------+--------+
+
+2025-03-08 08:59:43 - Saving the transformed data as Parquet File...
+2025-03-08 09:00:07 - Data saved successfully in Parquet folder.
+2025-03-08 09:00:07,864 - INFO - Total time taken to complete: 43.425852 seconds
+2025-03-08 09:00:07,865 - INFO - Closing down clientserver connection
