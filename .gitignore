@@ -1,2 +1,5 @@
 .ipynb_checkpoints/
 .env
+.DS_Store
+data
+lib/__pycache__
